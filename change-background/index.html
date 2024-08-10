@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Background Change</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Initial background color */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+    </style>
+</head>
+<body ondblclick="changeBackground()">
+    <h1>Double-click to change the background!</h1>
+
+    <script>
+        function changeBackground() {
+            // List of colors or images to cycle through
+            const backgrounds = [
+                '#3498db', // Blue
+                '#2ecc71', // Green
+                '#e74c3c', // Red
+                '#9b59b6', // Purple
+                'url("background1.jpg")', // Background image 1
+                'url("background2.jpg")'  // Background image 2
+            ];
+
+            // Get current background
+            const currentBackground = document.body.style.background;
+
+            // Find the next background in the list
+            let nextBackgroundIndex = backgrounds.indexOf(currentBackground) + 1;
+
+            // If we're at the end of the list, start over
+            if (nextBackgroundIndex >= backgrounds.length) {
+                nextBackgroundIndex = 0;
+            }
+
+            // Apply the next background
+            document.body.style.background = backgrounds[nextBackgroundIndex];
+        }
+    </script>
+</body>
+</html>

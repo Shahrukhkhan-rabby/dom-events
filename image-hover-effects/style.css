@@ -1,0 +1,9 @@
+.hover-image {
+    width: 300px; /* Set the desired size */
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.hover-image:hover {
+    content: url('/image-hover-effects/uddan.jpg'); /* Change to the new image on hover */
+}
